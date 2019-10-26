@@ -12,7 +12,7 @@ static String addL;
 static String contin;
     public static void main(String[] args) {
         getInput = new Scanner(System.in);
-        Random rnd = new Random();
+        rnd = new Random();
         firstNames.add("Baraka");
         firstNames.add("Jon");
         firstNames.add("Thomas");
@@ -133,7 +133,7 @@ static String contin;
         addL = getInput.next() + getInput.nextLine();
         String[] addLastsSplit = addL.split(" ");
         lastNames.addAll(Arrays.asList(addL));
-        System.out.println("\nThese are the saved first names:\n" + firstNames);
+        System.out.println("\nThese are the saved last names:\n" + lastNames);
         System.out.println("\nContinue?\n(YES||NO)");
         contin = getInput.next() + getInput.nextLine();
         if (contin.toLowerCase().equals("yes")||contin.toLowerCase().equals("y")){
@@ -154,6 +154,7 @@ static String contin;
     }
     public static void removeFromListFirst(){
         System.out.println("Enter in a name you want removed\n\nExample:\nBaraka\n\nOr type 'clear' to removed everything from the first names list");
+        String removeFLF = getInput.next() + getInput.nextLine();
     }
     public static void removeFromListLast(){
         System.out.println("aaaa");
@@ -162,6 +163,6 @@ static String contin;
         String rndFromListFirst = firstNames.get(rnd.nextInt(firstNames.size()));
         String rndFromListLast = lastNames.get(rnd.nextInt(lastNames.size()));
         System.out.println("\nYour random name is\n\nFirst: " + rndFromListFirst + "\nLast: " + rndFromListLast);
-        cont();
+        continSure();
     }
 }
