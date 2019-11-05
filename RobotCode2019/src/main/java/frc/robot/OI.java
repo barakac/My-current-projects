@@ -15,15 +15,59 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 
 public class OI {
+    //makes the joysticks less sensitive
+    private final double UPPER_JOYSTICK_BUFFER = .05;
+    private final double LOWER_JOYSTICK_BUFFER = -.05;
+
+    //declare joysticks
     private Joystick jLeft = new Joystick(0);
     private Joystick jRight = new Joystick(1);
+    public Joystick jArm =  new Joystick (3);
 
-    public double getLeftSpeed(){
-        return jLeft.getY();
-
+    //gets the speed from joystick 0 to control left side wheels
+    public double getLeftSpeed() {
+        if ((jLeft.getY() < UPPER_JOYSTICK_BUFFER) && (jLeft.getY() > LOWER_JOYSTICK_BUFFER)) {
+            return 0;
+        } else {
+           return jLeft.getY();
+        }
     }
+
+    //gets the speed from joystick 1 to control right side wheels
     public double getRightSpeed(){
-        return jRight.getY();
+        if ((jRight.getY() < UPPER_JOYSTICK_BUFFER) && (jRight.getY() > LOWER_JOYSTICK_BUFFER)) {
+            return 0;
+        } else {
+            return jRight.getY();
+        }
+    }
+
+    //gets the speed from joystick 3 to control the lift
+    public double getArmSpeed(){
+        if ((jArm.getY() < UPPER_JOYSTICK_BUFFER) && (jArm.getY() > LOWER_JOYSTICK_BUFFER)){
+            return 0;
+        } else{
+            return jArm.getY();
+        }
+    }
+    //same as getLiftSpeed() but will only only send numbers between
+    public double getArmPosSpeed(){
+        if ((jArm.getY() < UPPER_JOYSTICK_BUFFER) && (jArm.getY() > LOWER_JOYSTICK_BUFFER)){
+            return 0;
+        } else if (jArm.getY() > 0){
+            return jArm.getY();
+        } else {
+            return 0;
+        }
+    }
+    public double getArmNegSpeed(){
+        if ((jArm.getY() < UPPER_JOYSTICK_BUFFER) && (jArm.getY() > LOWER_JOYSTICK_BUFFER)){
+            return 0;
+        } else if (jArm.getY() < 0){
+            return jArm.getY();
+        } else {
+            return 0;
+        }
     }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a

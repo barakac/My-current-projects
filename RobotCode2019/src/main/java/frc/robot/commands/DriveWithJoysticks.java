@@ -1,13 +1,7 @@
 package frc.robot.commands;
-
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.subsystems.Drivetrain;
-
-import java.sql.SQLOutput;
-
 import static frc.robot.Robot.drivetrain;
 import static frc.robot.Robot.oi;
-
 public class DriveWithJoysticks extends Command {
     public DriveWithJoysticks(){
         requires(drivetrain);
@@ -15,7 +9,6 @@ public class DriveWithJoysticks extends Command {
     @Override
     protected void initialize(){
         System.out.println("Drive With Joysticks Enabled");
-
     }
     @Override
     protected void execute(){
@@ -27,7 +20,6 @@ public class DriveWithJoysticks extends Command {
         drivetrain.stop();
         System.out.println("Drive With Joysticks Terminated");
     }
-
     @Override
     protected boolean isFinished() {
         return false;
