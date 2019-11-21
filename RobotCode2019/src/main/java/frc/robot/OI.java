@@ -16,8 +16,7 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class OI {
     //makes the joysticks less sensitive
-    private final double UPPER_JOYSTICK_BUFFER = .05;
-    private final double LOWER_JOYSTICK_BUFFER = -.05;
+    private final double joystickBuffer = .07;
 
     //declare joysticks
     private Joystick jLeft = new Joystick(0);
@@ -26,7 +25,7 @@ public class OI {
 
     //gets the speed from joystick 0 to control left side wheels
     public double getLeftSpeed() {
-        if ((jLeft.getY() < UPPER_JOYSTICK_BUFFER) && (jLeft.getY() > LOWER_JOYSTICK_BUFFER)) {
+        if ((Math.abs(jLeft.getY()) < joystickBuffer)) {
             return 0;
         } else {
            return jLeft.getY();
@@ -35,7 +34,7 @@ public class OI {
 
     //gets the speed from joystick 1 to control right side wheels
     public double getRightSpeed(){
-        if ((jRight.getY() < UPPER_JOYSTICK_BUFFER) && (jRight.getY() > LOWER_JOYSTICK_BUFFER)) {
+        if ((Math.abs(jRight.getY()) < joystickBuffer)) {
             return 0;
         } else {
             return jRight.getY();
@@ -44,15 +43,15 @@ public class OI {
 
     //gets the speed from joystick 3 to control the lift
     public double getArmSpeed(){
-        if ((jArm.getY() < UPPER_JOYSTICK_BUFFER) && (jArm.getY() > LOWER_JOYSTICK_BUFFER)){
+        if ((Math.abs(jArm.getY()) < joystickBuffer)){
             return 0;
         } else{
             return jArm.getY();
         }
     }
-    //same as getLiftSpeed() but will only only send numbers between
+    //same as getLiftSpeed() but will only send positive numbers
     public double getArmPosSpeed(){
-        if ((jArm.getY() < UPPER_JOYSTICK_BUFFER) && (jArm.getY() > LOWER_JOYSTICK_BUFFER)){
+        if ((Math.abs(jArm.getY())) < joystickBuffer){
             return 0;
         } else if (jArm.getY() > 0){
             return jArm.getY();
@@ -61,7 +60,7 @@ public class OI {
         }
     }
     public double getArmNegSpeed(){
-        if ((jArm.getY() < UPPER_JOYSTICK_BUFFER) && (jArm.getY() > LOWER_JOYSTICK_BUFFER)){
+        if ((Math.abs(jArm.getY()) < joystickBuffer)){
             return 0;
         } else if (jArm.getY() < 0){
             return jArm.getY();
