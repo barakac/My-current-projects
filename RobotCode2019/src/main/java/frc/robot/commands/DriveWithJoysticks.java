@@ -3,6 +3,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import static frc.robot.Robot.drivetrain;
 import static frc.robot.Robot.oi;
 public class DriveWithJoysticks extends Command {
+    private boolean endStatus = false;
     public DriveWithJoysticks(){
         requires(drivetrain);
     }
@@ -22,6 +23,6 @@ public class DriveWithJoysticks extends Command {
     }
     @Override
     protected boolean isFinished() {
-        return false;
+        return endStatus;
     }
 }

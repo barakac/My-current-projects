@@ -13,7 +13,7 @@ public class Drivetrain extends Subsystem {
     public Drivetrain() {
         System.out.println("");
     }
-    public void initDefaultCommand(){
+    public void initDefaultCommand() {
         setDefaultCommand(new DriveWithJoysticks() );
     }
     public void moveLeftMotors(double speed) {

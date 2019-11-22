@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74284ead-76d6-4922-9a3a-605a183fbaab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/commands/DriveForDistance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/commands/DriveForTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RandomNameGen/out/production/RandomNameGen/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RandomNameGen/out/production/RandomNameGen/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotCode2019.iws" beforeDir="false" afterPath="$PROJECT_DIR$/RobotCode2019.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/OI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/OI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/commands/DriveWithJoysticks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/commands/DriveWithJoysticks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/Drivetrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/Drivetrain.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
